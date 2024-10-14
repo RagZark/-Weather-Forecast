@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <title>Previsao do Tempo</title>
+</head>
+
+<body>
+    <main class="container">
+        <div class="serach-city">
+            <input type="text" id="search-input" placeholder="Digite uma cidade">
+            <button class="serach-button"><img src="./src/imagens/lupa.png" class="lupa-image" alt="lupa"></button>
+        </div>
+        <div class="details">
+            <h1 id="city">Use a lupa para procurar o clima de uma cidade.</h1>
+
+            <p class="temperature" id="temperature"></p>
+
+            <img id="climate" src="https://cdn.weatherapi.com/weather/64x64/day/116.png" alt="icon climate">
+
+            <p class="climate-condition" id="climate-condition"></p>
+        </div>
+        <div class="more-details">
+            <div class="humidity">
+                <span>Umidade</span>
+                <span id="humidity">--</span>
+            </div>
+            <div class="wind-speed">
+                <span>Vento</span>
+                <span id="wind-speed">--</span>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
