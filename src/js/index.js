@@ -1,4 +1,4 @@
-const keyAPI = "PUT_YOUR_KEY"; // https://www.weatherapi.com/signup.aspx
+const keyAPI = "GENERATE_YOUR_KEY"; //https://www.weatherapi.com/signup.aspx
 const baseURL = "http://api.weatherapi.com/v1"
 const language = "pt"
 
@@ -7,11 +7,11 @@ const searchButton = document.querySelector(".search-button");
 searchButton.addEventListener("click", async () => {
     const city = document.getElementById("search-input").value;
 
+    if(!city) return;
+
     const data = await searchCityData(city);
 
-    console.log(data)
-
-    fillData(data, city);
+    if (data) fillData(data, city);
 
 });
 
@@ -20,6 +20,8 @@ async function searchCityData(city) {
     const apiURL = `${baseURL}/current.json?key=${keyAPI}&q=${city}&aqi=no&lang=${language}`;
 
     const response = await fetch(apiURL);
+
+    if(response.status !== 200) return;
 
     const data = response.json();
 
