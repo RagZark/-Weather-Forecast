@@ -1,4 +1,4 @@
-const keyAPI = "GENERATE_YOUR_KEY"; //https://www.weatherapi.com/signup.aspx
+const keyAPI = "80b5e4352e6a4109835183057241410"; //https://www.weatherapi.com/signup.aspx
 const baseURL = "http://api.weatherapi.com/v1"
 const language = "pt"
 
@@ -28,6 +28,10 @@ async function searchCityData(city) {
     return data;
 }
 
+function setTextElement (id, text){
+    document.getElementById(id).textContent = text
+}
+
 function fillData(data, city) {
     const temperature = data.current.temp_c
     const condition = data.current.condition.text;
@@ -35,15 +39,15 @@ function fillData(data, city) {
     const windSpeed = data.current.wind_kph
     const conditionIcon = data.current.condition.icon
 
-    document.getElementById("city").textContent = city
+    setTextElement("city", city)
 
-    document.getElementById("temperature").textContent = `${temperature.toFixed(0)} °C`
+    setTextElement("temperature", `${temperature.toFixed(0)} °C`)
 
-    document.getElementById("climate-condition").textContent = condition
+    setTextElement("climate-condition", condition)
 
-    document.getElementById("humidity").textContent = `${humidity}%`
+    setTextElement("humidity", `${humidity}%`)
 
-    document.getElementById("wind-speed").textContent = `${windSpeed} km/h`
+    setTextElement("wind-speed", `${windSpeed} km/h`)
 
     document.getElementById("climate-icon").setAttribute("src", conditionIcon)
 }
