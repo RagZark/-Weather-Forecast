@@ -1,4 +1,4 @@
-const keyAPI = "80b5e4352e6a4109835183057241410"; //https://www.weatherapi.com/signup.aspx
+const keyAPI = "SUA_API_KEY_AQUI"; //https://www.weatherapi.com/signup.aspx
 const baseURL = "http://api.weatherapi.com/v1"
 const language = "pt"
 
